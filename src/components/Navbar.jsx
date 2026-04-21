@@ -14,7 +14,7 @@ const Navbar = ({ theme, toggleTheme }) => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const navLinks = ['about', 'skills', 'experience', 'projects', 'education', 'contact']
+  const navLinks = ['about', 'skills', 'articles', 'projects', 'education', 'contact']
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
