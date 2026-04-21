@@ -1,14 +1,14 @@
 /* d:\portfolio\src\components\Hero.css */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600;800&display=swap');
 
 .hero-section {
   position: relative;
   min-height: 100vh;
-  background-color: #0b0e17;
+  background-color: var(--bg-primary);
   overflow: hidden;
   display: flex;
   align-items: center;
   font-family: 'Inter', sans-serif;
+  transition: background-color 0.4s ease;
 }
 
 /* Background Abstract Shapes */
@@ -16,22 +16,21 @@
   position: absolute;
   border-radius: 50%;
   z-index: 0;
+  transition: background-color 0.4s ease;
 }
 
 .bg-shape.dark-blue-1 {
   width: 700px;
   height: 700px;
-  background-color: #12182b;
+  background-color: var(--shape-blue);
   top: -250px;
   left: -250px;
 }
 
-
-
 .bg-shape.red-1 {
   width: 120px;
   height: 120px;
-  background-color: #ff003c91;
+  background-color: var(--shape-red-1);
   right: -40px;
   top: 20%;
 }
@@ -39,7 +38,7 @@
 .bg-shape.red-2 {
   width: 180px;
   height: 180px;
-  background-color: #ff003c62;
+  background-color: var(--shape-red-2);
   bottom: -80px;
   left: -60px;
 }
@@ -63,31 +62,34 @@
 }
 
 .hero-greeting {
-  color: #a0a5b5;
+  color: var(--text-secondary);
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   font-weight: 300;
+  transition: color 0.4s ease;
 }
 
 .hero-title {
-  color: #ffffff;
+  color: var(--text-primary);
   font-size: 6rem;
   font-weight: 800;
   line-height: 1.05;
   margin-bottom: 1.5rem;
   letter-spacing: -0.02em;
+  transition: color 0.4s ease;
 }
 
 .hero-subtitle {
-  color: #a0a5b5;
+  color: var(--text-secondary);
   font-size: 1.125rem;
   margin-bottom: 2.5rem;
   max-width: 450px;
   line-height: 1.6;
+  transition: color 0.4s ease;
 }
 
 .highlight-red {
-  color: #ff003c;
+  color: var(--accent);
   font-weight: 500;
 }
 
@@ -96,10 +98,11 @@
 }
 
 .find-me-title {
-  color: #ffffff;
+  color: var(--text-primary);
   font-size: 1.1rem;
   margin-bottom: 1rem;
   font-weight: 500;
+  transition: color 0.4s ease;
 }
 
 .social-icons {
@@ -108,7 +111,7 @@
 }
 
 .social-icon {
-  color: #ffffff;
+  color: var(--text-primary);
   font-size: 1.5rem;
   transition: all 0.3s ease;
   display: flex;
@@ -117,7 +120,7 @@
 }
 
 .social-icon:hover {
-  color: #ff003c;
+  color: var(--accent);
   transform: translateY(-3px);
 }
 
@@ -140,27 +143,27 @@
 }
 
 .btn-primary {
-  background-color: #ff003ca2;
-  color: #ffffff;
-  border: 2px solid #ff003c;
-  box-shadow: 0 10px 20px rgba(255, 0, 60, 0.2);
+  background-color: var(--accent-bg);
+  color: var(--text-primary);
+  border: 2px solid var(--accent-border);
+  box-shadow: 0 10px 20px var(--accent-shadow);
 }
 
 .btn-primary:hover {
   background-color: transparent;
-  color: #ff003c;
+  color: var(--accent-hover);
   box-shadow: none;
 }
 
 .btn-secondary {
   background-color: transparent;
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: var(--text-primary);
+  border: 1px solid var(--border-btn);
 }
 
 .btn-secondary:hover {
-  border-color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.05);
+  border-color: var(--border-btn-hover);
+  background-color: var(--btn-hover-bg);
 }
 
 .hero-image-wrapper {
@@ -177,13 +180,14 @@
   width: 420px;
   height: 420px;
   border-radius: 50%;
-  background-color: #12182b;
-  background: radial-gradient(circle at 30% 30%, #202542, #0c1025 60%, #0b0e17 100%);
-  box-shadow: 0 0 60px rgba(15, 20, 50, 0.3), 0 0 120px rgba(10, 14, 30, 0.15);
+  background-color: var(--shape-blue);
+  background: var(--circle-bg);
+  box-shadow: var(--circle-shadow);
   z-index: 0;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: background 0.4s ease, box-shadow 0.4s ease;
 }
 
 .hero-image {
@@ -214,7 +218,7 @@
 }
 
 .page-num {
-  color: rgba(255, 255, 255, 0.2);
+  color: var(--text-faint);
   font-size: 0.875rem;
   font-weight: 600;
   cursor: pointer;
@@ -226,7 +230,7 @@
 
 .page-num.active,
 .page-num:hover {
-  color: #ffffff;
+  color: var(--text-primary);
 }
 
 /* Responsive Styles */

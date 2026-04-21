@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-scroll'
+import { FaSun, FaMoon } from 'react-icons/fa'
+import profileImg from '../assets/profile.png'
 import './Navbar.css'
 
-const Navbar = () => {
+const Navbar = ({ theme, toggleTheme }) => {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -20,7 +22,8 @@ const Navbar = () => {
 
         {/* Logo */}
         <span className="nav-logo">
-          Dheeshana De Silva
+          <img src={profileImg} alt="Profile" className="nav-profile-pic" />
+          <span className="nav-logo-text">Dheeshana De Silva</span>
         </span>
 
         {/* Desktop Links */}
@@ -40,16 +43,27 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Mobile Hamburger */}
-        <button
-          className={`hamburger-btn ${menuOpen ? 'open' : ''}`}
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle Menu"
-        >
-          <span className="hamburger-line" />
-          <span className="hamburger-line" />
-          <span className="hamburger-line" />
-        </button>
+        {/* Right side controls (Theme Toggle + Hamburger) */}
+        <div className="nav-right">
+          <button
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+            title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            {theme === 'dark' ? <FaSun /> : <FaMoon />}
+          </button>
+
+          <button
+            className={`hamburger-btn ${menuOpen ? 'open' : ''}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle Menu"
+          >
+            <span className="hamburger-line" />
+            <span className="hamburger-line" />
+            <span className="hamburger-line" />
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}

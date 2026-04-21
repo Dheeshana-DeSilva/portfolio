@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import TechStack from './components/TechStack'
@@ -8,9 +9,23 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 function App() {
+  const [theme, setTheme] = useState(() => {
+    const saved = localStorage.getItem('portfolio-theme')
+    return saved || 'dark'
+  })
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+    localStorage.setItem('portfolio-theme', theme)
+  }, [theme])
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark')
+  }
+
   return (
-    <div className="bg-[#0a0a0a] text-white min-h-screen">
-      <Navbar />
+    <div>
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
       <Hero />
       <TechStack />
       <Experience />
