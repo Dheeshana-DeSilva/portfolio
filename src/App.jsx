@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import TechStack from './components/TechStack'
-import Experience from './components/Experience'
+import Articles from './components/Articles'
 import Projects from './components/Projects'
 import Education from './components/Education'
 import Contact from './components/Contact'
@@ -28,7 +28,7 @@ function App() {
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <Hero />
       <TechStack />
-      <Experience />
+      <Articles />
       <Projects />
       <Education />
       <Contact />
