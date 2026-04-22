@@ -42,7 +42,7 @@ const Hero = () => {
 
           {/* Description */}
           <p className="hero-subtitle">
-            A <span className="highlight-red">software engineering </span> Undergraduate
+            A <span className="highlight-red">Full Stack Developer</span>
           </p>
 
           {/* Social Links */}

@@ -11,7 +11,7 @@ const educationData = [
     duration: "2023 - Present",
     details: [
       <React.Fragment key="gpa">Current GPA: <span className="highlight-text">3.76/4.0</span></React.Fragment>,
-      "Key Domains: Data Science and Engineering, Net-Centric Web Applications, Business Engineering, Health Informatics"
+      "Key Domains: Data Science and Engineering, Net-Centric Web Applications, Business Engineering Applications, Health Informatics Applications"
     ],
     logo: uokLogo
   },
