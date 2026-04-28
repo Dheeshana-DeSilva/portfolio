@@ -12,7 +12,7 @@ const Contact = () => {
 
     const subject = encodeURIComponent(`Portfolio Message from ${name}`);
     const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-    
+
     window.location.href = `mailto:dheeshanadesilva2002@gmail.com?subject=${subject}&body=${body}`;
   };
 
@@ -33,7 +33,7 @@ const Contact = () => {
               </div>
               <div className="contact-card-text">
                 <span className="contact-card-label">EMAIL</span>
-                <a href="mailto:dheeshanadesilva2002@gmail.com" className="contact-card-value" style={{ textDecoration: 'none', color: 'inherit' }}>dheeshanadesilva2002@gmail.com</a>
+                <a href="mailto:dheeshanadesilva2002@gmail.com" className="contact-card-value" style={{ textDecoration: 'none' }}>dheeshanadesilva2002@gmail.com</a>
               </div>
             </div>
 
@@ -43,7 +43,7 @@ const Contact = () => {
               </div>
               <div className="contact-card-text">
                 <span className="contact-card-label">GITHUB</span>
-                <a href="https://github.com/Dheeshana-DeSilva" target="_blank" rel="noopener noreferrer" className="contact-card-value" style={{ textDecoration: 'none', color: 'inherit' }}>Dheeshana-DeSilva</a>
+                <a href="https://github.com/Dheeshana-DeSilva" target="_blank" rel="noopener noreferrer" className="contact-card-value" style={{ textDecoration: 'none' }}>Dheeshana-DeSilva</a>
               </div>
             </div>
 
@@ -53,11 +53,12 @@ const Contact = () => {
               </div>
               <div className="contact-card-text">
                 <span className="contact-card-label">LINKEDIN</span>
-                <a href="https://www.linkedin.com/in/dheeshana-de-silva2002/" target="_blank" rel="noopener noreferrer" className="contact-card-value" style={{ textDecoration: 'none', color: 'inherit' }}>dheeshana-desilva</a>
+                <a href="https://www.linkedin.com/in/dheeshana-de-silva2002/" target="_blank" rel="noopener noreferrer" className="contact-card-value" style={{ textDecoration: 'none' }}>dheeshana-desilva</a>
               </div>
             </div>
           </div>
         </div>
+
 
         <div className="contact-right">
           <div className="contact-form-container">
@@ -82,8 +83,8 @@ const Contact = () => {
           </div>
         </div>
 
-      </div>
-    </section>
+      </div >
+    </section >
   );
 };
 

@@ -1,7 +1,11 @@
 /* Contact Section */
 .contact-section {
-  padding: 6rem 2rem;
+  padding: 4rem 2rem 1rem;
   color: var(--text-color, #ffffff);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .contact-container {
@@ -9,20 +13,22 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 5rem;
+  gap: 3rem;
+  width: 100%;
 }
 
 /* Left Side */
 .contact-left {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .contact-title {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 800;
   text-transform: uppercase;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   letter-spacing: 1px;
 }
 
@@ -35,10 +41,10 @@
 }
 
 .contact-intro {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #b3b3b3;
   line-height: 1.6;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
   max-width: 95%;
 }
 
