@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Articles.css';
-import { FaBook, FaEye, FaUsers, FaArrowRight } from 'react-icons/fa';
+import { FaBook, FaEye, FaUsers, FaArrowRight, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import ciaTriadImg from '../assets/cia_triad.png';
 
 const articlesData = [
@@ -67,6 +67,39 @@ const articlesData = [
 ];
 
 const Articles = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [cardsPerPage, setCardsPerPage] = useState(window.innerWidth > 768 ? 3 : 1);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setCardsPerPage(window.innerWidth > 768 ? 3 : 1);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Recalculate if window resizes and currentIndex goes out of bounds
+  const totalPages = Math.ceil(articlesData.length / cardsPerPage);
+  React.useEffect(() => {
+    if (currentIndex >= totalPages) {
+      setCurrentIndex(Math.max(0, totalPages - 1));
+    }
+  }, [cardsPerPage, currentIndex, totalPages]);
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === totalPages - 1 ? 0 : prevIndex + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? totalPages - 1 : prevIndex - 1));
+  };
+
+  const goToSlide = (index) => {
+    setCurrentIndex(index);
+  };
+
+  const activeArticles = articlesData.slice(currentIndex * cardsPerPage, (currentIndex + 1) * cardsPerPage);
+
   return (
     <section id="articles" className="articles-section">
       <div className="articles-container">
@@ -76,39 +109,63 @@ const Articles = () => {
           <h2 className="articles-title">My <span>Articles</span></h2>
           <div className="articles-intro">
             <p className="articles-subtitle">Welcome to my tech blog!</p>
-            <a href="https://medium.com/@dheeshanadesilva2002" target="_blank" rel="noopener noreferrer" className="medium-profile-btn">
-              View Medium Profile <FaArrowRight className="link-arrow" />
-            </a>
+          </div>
+        </div>
+
+        {/* Carousel */}
+        <div className="carousel-wrapper">
+          <button className="carousel-control prev" onClick={prevSlide} aria-label="Previous Article">
+            <FaChevronLeft />
+          </button>
+
+          <div className="carousel-content articles-grid">
+            {activeArticles.map((article) => (
+              <div className="carousel-card" key={article.id}>
+                <div className="carousel-image-container">
+                  <img src={article.image} alt={article.title} className="carousel-image" />
+                </div>
+                <div className="carousel-card-body">
+                  <h3 className="carousel-card-title">{article.title}</h3>
+                  <p className="carousel-card-description">{article.summary}</p>
+                  
+                  <div className="carousel-card-tags">
+                    {article.tags.map((tag, idx) => (
+                      <span key={idx} className="carousel-tag">{tag}</span>
+                    ))}
+                  </div>
+
+                  <div className="carousel-card-footer">
+                    <a href={article.link} target="_blank" rel="noopener noreferrer" className="carousel-repo-link">
+                      <FaBook className="repo-icon" /> READ ARTICLE <FaArrowRight className="link-arrow" style={{marginLeft: '0.5rem'}} />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
 
+          <button className="carousel-control next" onClick={nextSlide} aria-label="Next Article">
+            <FaChevronRight />
+          </button>
         </div>
 
-        {/* Articles Grid */}
-        <div className="articles-grid">
-          {articlesData.map((article) => (
-            <div key={article.id} className="article-card">
-              <div className="article-image-wrapper">
-                <img src={article.image} alt={article.title} className="article-image" />
-                <div className="article-meta-overlay">
-                  <span className="article-date">📅 {article.date}</span>
-                  <span className="article-readtime">⏱️ {article.readTime}</span>
-                </div>
-              </div>
-              <div className="article-content">
-                <h3 className="article-title">{article.title}</h3>
-                <p className="article-summary">{article.summary}</p>
-                <div className="article-tags">
-                  {article.tags.map((tag, index) => (
-                    <span key={index} className="article-tag">{tag}</span>
-                  ))}
-                </div>
-                <a href={article.link} target="_blank" rel="noopener noreferrer" className="article-link">
-                  READ ARTICLE <FaArrowRight className="link-arrow" />
-                </a>
-              </div>
-            </div>
+        <div className="carousel-indicators">
+          {Array.from({ length: totalPages }).map((_, idx) => (
+            <button
+              key={idx}
+              className={`carousel-dot ${idx === currentIndex ? 'active' : ''}`}
+              onClick={() => goToSlide(idx)}
+              aria-label={`Go to slide ${idx + 1}`}
+            />
           ))}
         </div>
+
+        <div className="articles-footer" style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem' }}>
+          <a href="https://medium.com/@dheeshanadesilva2002" target="_blank" rel="noopener noreferrer" className="medium-profile-btn">
+            View Medium Profile <FaArrowRight className="link-arrow" />
+          </a>
+        </div>
+
       </div>
     </section>
   );
