@@ -1,42 +1,40 @@
 import React from 'react';
+
 import './TechStack.css';
 
-const skills = [
+const devicon = (path) => `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${path}`;
+
+const skillCategories = [
   {
-    category: "Programming Languages",
-    items: ["Java", "Python", "JavaScript", "C", "Kotlin", "PHP"]
+    title: "Frontend Development",
+    skills: [
+      { name: "HTML", iconUrl: devicon('html5/html5-original.svg') },
+      { name: "CSS", iconUrl: devicon('css3/css3-original.svg') },
+      { name: "Tailwind CSS", iconUrl: devicon('tailwindcss/tailwindcss-original.svg') },
+      { name: "Bootstrap", iconUrl: devicon('bootstrap/bootstrap-original.svg') },
+      { name: "React", iconUrl: devicon('react/react-original.svg') },
+      { name: "JavaScript", iconUrl: devicon('javascript/javascript-original.svg') }
+    ]
   },
   {
-    category: "Web Development",
-    items: ["HTML, CSS", "JavaScript", "REST APIs"]
+    title: "Backend Development",
+    skills: [
+      { name: "Java", iconUrl: devicon('java/java-original.svg') },
+      { name: "PHP", iconUrl: devicon('php/php-original.svg') },
+      { name: "Spring Boot Framework", iconUrl: devicon('spring/spring-original.svg') },
+      { name: "Node.js", iconUrl: devicon('nodejs/nodejs-original.svg') },
+      { name: "Express.js", iconUrl: devicon('express/express-original.svg'), className: 'express-icon' }
+    ]
   },
   {
-    category: "Frontend Frameworks",
-    items: ["React.js"]
-  },
-  {
-    category: "Backend Development",
-    items: ["Node.js", "Express.js", "Spring Boot"]
-  },
-  {
-    category: "Mobile Development",
-    items: ["Android Development", "Jetpack Compose"]
-  },
-  {
-    category: "Database Management",
-    items: ["MySQL", "PostgreSQL", "MongoDB"]
-  },
-  {
-    category: "Version Control",
-    items: ["Git", "GitHub"]
-  },
-  {
-    category: "Tools & IDEs",
-    items: ["VS Code", "IntelliJ IDEA", "Android Studio", "Code::Blocks", "Figma (UI/UX)"]
-  },
-  {
-    category: "Other Tools",
-    items: ["Canva", "Adobe Photoshop", "Microsoft Office", "Power BI (Basic)"]
+    title: "Other Development Tools",
+    skills: [
+      { name: "MySQL", iconUrl: devicon('mysql/mysql-original.svg') },
+      { name: "MongoDB", iconUrl: devicon('mongodb/mongodb-original.svg') },
+      { name: "Git", iconUrl: devicon('git/git-original.svg') },
+      { name: "Figma", iconUrl: devicon('figma/figma-original.svg') },
+      { name: "Adobe Photoshop", iconUrl: devicon('photoshop/photoshop-original.svg') }
+    ]
   }
 ];
 
@@ -45,24 +43,26 @@ const TechStack = () => {
     <section id="skills" className="tech-section">
       <div className="tech-container">
         <div className="tech-header">
-          <h2 className="tech-title">Technical <span>Expertise</span></h2>
-          <p className="tech-subtitle">A comprehensive list of my technical skills, tools, and technologies I work with.</p>
+          <h2 className="tech-title">My <span>Skills</span></h2>
+          <div className="tech-intro">
+            <p className="tech-subtitle">Here are the technologies and tools I work with</p>
+          </div>
         </div>
 
-        <div className="tech-grid">
-          {skills.map((skillGroup, index) => (
-            <div key={index} className="tech-card" style={{ animationDelay: `${index * 0.1}s` }}>
-              <div className="tech-card-header">
-                <h3>{skillGroup.category}</h3>
-              </div>
-              <ul className="tech-list">
-                {skillGroup.items.map((item, i) => (
-                  <li key={i} className="tech-item">
-                    <span className="tech-bullet"></span>
-                    {item}
-                  </li>
+        <div className="tech-categories">
+          {skillCategories.map((category, index) => (
+            <div key={index} className="tech-category">
+              <h3 className="category-title">{category.title}</h3>
+              <div className="skills-grid">
+                {category.skills.map((skill, i) => (
+                  <div key={i} className="skill-item" style={{ animationDelay: `${(index * 0.1) + (i * 0.05)}s` }}>
+                    <div className="skill-icon">
+                      <img src={skill.iconUrl} alt={skill.name} className={skill.className || ''} />
+                    </div>
+                    <span className="skill-name">{skill.name}</span>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           ))}
         </div>
