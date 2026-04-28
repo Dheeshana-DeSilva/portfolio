@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import './Projects.css';
-import { FaGithub, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaGithub, FaFigma, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import sportsItemsImg from '../assets/sports-items.jpg';
 import bookFairImg from '../assets/book-fair.jpg';
+import UnibeatImg from '../assets/unibeat.png'
 
 const projectsData = [
   {
@@ -32,6 +33,20 @@ const projectsData = [
     tags: ["HTML/CSS/JS", "PHP", "Git"],
     image: sportsItemsImg,
     repoLink: "https://github.com/Dheeshana-DeSilva/sports_eqiupments_stock"
+  },
+  {
+    id: 3,
+    title: "UniBeat Event Management System",
+    subtitle: "UI/UX Design Prototype",
+    description: "A comprehensive event management platform tailored for university students, staff, and public guests.",
+    features: [
+      "Designed an intuitive discovery and hosting interface for Students to easily find and create events.",
+      "Created a dashboard for University Staff to approve university-sponsored events and monitor analytics.",
+      "Developed a streamlined, no-login browsing experience for Public Guests with clear access rules."
+    ],
+    tags: ["UI/UX", "Figma", "User Research", "Prototyping"],
+    image: UnibeatImg,
+    figmaLink: "https://www.figma.com/proto/oX5eiKvUiMpg8vzoZSJM5U/UniBeat?page-id=0%3A1&node-id=2-6&viewport=113%2C80%2C0.38&t=hLPx76m1ZM1krlfd-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=2%3A6&show-proto-sidebar=1"
   }
 ];
 
@@ -81,8 +96,9 @@ const Projects = () => {
                   ))}
                 </div>
                 <div className="carousel-card-footer">
-                  <a href={activeProject.repoLink} target="_blank" rel="noopener noreferrer" className="carousel-repo-link">
-                    <FaGithub className="repo-icon" /> GitHub Repo
+                  <a href={activeProject.figmaLink || activeProject.repoLink} target="_blank" rel="noopener noreferrer" className="carousel-repo-link">
+                    {activeProject.figmaLink ? <FaFigma className="repo-icon" /> : <FaGithub className="repo-icon" />}
+                    {activeProject.figmaLink ? ' Figma Prototype' : ' GitHub Repo'}
                   </a>
                 </div>
               </div>
