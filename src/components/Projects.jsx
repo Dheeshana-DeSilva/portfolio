@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Projects.css';
-import { FaGithub, FaArrowRight } from 'react-icons/fa';
+import { FaGithub, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import sportsItemsImg from '../assets/sports-items.jpg';
 import bookFairImg from '../assets/book-fair.jpg';
 
@@ -36,6 +36,22 @@ const projectsData = [
 ];
 
 const Projects = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === projectsData.length - 1 ? 0 : prevIndex + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? projectsData.length - 1 : prevIndex - 1));
+  };
+
+  const goToSlide = (index) => {
+    setCurrentIndex(index);
+  };
+
+  const activeProject = projectsData[currentIndex];
+
   return (
     <section id="projects" className="projects-section">
       <div className="projects-container">
@@ -46,36 +62,46 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="projects-grid">
-          {projectsData.map((project) => (
-            <div key={project.id} className="project-card">
-              <div className="project-image-wrapper">
-                <img src={project.image} alt={project.title} className="project-image" />
+        <div className="carousel-wrapper">
+          <button className="carousel-control prev" onClick={prevSlide} aria-label="Previous Project">
+            <FaChevronLeft />
+          </button>
+
+          <div className="carousel-content">
+            <div className="carousel-card">
+              <div className="carousel-image-container">
+                <img src={activeProject.image} alt={activeProject.title} className="carousel-image" />
               </div>
-              <div className="project-content">
-                <div className="project-header-info">
-                  <h3 className="project-title">{project.title}</h3>
-                  <span className="project-subtitle">{project.subtitle}</span>
-                </div>
-                <p className="project-description">{project.description}</p>
-
-                <ul className="project-features">
-                  {project.features.map((feature, idx) => (
-                    <li key={idx}>- {feature}</li>
-                  ))}
-                </ul>
-
-                <div className="project-tags">
-                  {project.tags.map((tag, index) => (
-                    <span key={index} className="project-tag">{tag}</span>
+              <div className="carousel-card-body">
+                <h3 className="carousel-card-title">{activeProject.title}</h3>
+                <p className="carousel-card-description">{activeProject.description}</p>
+                <div className="carousel-card-tags">
+                  {activeProject.tags.map((tag, idx) => (
+                    <span key={idx} className="carousel-tag">{tag}</span>
                   ))}
                 </div>
-                <a href={project.repoLink} target="_blank" rel="noopener noreferrer" className="project-link">
-                  <FaGithub className="link-icon" /> VIEW REPOSITORY <FaArrowRight className="link-arrow" />
-                </a>
+                <div className="carousel-card-footer">
+                  <a href={activeProject.repoLink} target="_blank" rel="noopener noreferrer" className="carousel-repo-link">
+                    <FaGithub className="repo-icon" /> GitHub Repo
+                  </a>
+                </div>
               </div>
             </div>
           </div>
+
+          <button className="carousel-control next" onClick={nextSlide} aria-label="Next Project">
+            <FaChevronRight />
+          </button>
+        </div>
+
+        <div className="carousel-indicators">
+          {projectsData.map((_, idx) => (
+            <button
+              key={idx}
+              className={`carousel-dot ${idx === currentIndex ? 'active' : ''}`}
+              onClick={() => goToSlide(idx)}
+              aria-label={`Go to slide ${idx + 1}`}
+            />
           ))}
         </div>
       </div>
