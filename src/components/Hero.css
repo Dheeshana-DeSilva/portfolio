@@ -49,7 +49,7 @@
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 6rem 2rem 2rem;
+  padding: 4rem 2rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -63,7 +63,7 @@
 
 .hero-greeting {
   color: var(--text-secondary);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin-bottom: 0.5rem;
   font-weight: 300;
   transition: color 0.4s ease;
@@ -71,20 +71,20 @@
 
 .hero-title {
   color: var(--text-primary);
-  font-size: 6rem;
+  font-size: 4rem;
   font-weight: 800;
-  line-height: 1.05;
-  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  margin-bottom: 1rem;
   letter-spacing: -0.02em;
   transition: color 0.4s ease;
 }
 
 .hero-subtitle {
   color: var(--text-secondary);
-  font-size: 1.125rem;
-  margin-bottom: 2.5rem;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
   max-width: 450px;
-  line-height: 1.6;
+  line-height: 1.5;
   transition: color 0.4s ease;
 }
 
@@ -94,25 +94,25 @@
 }
 
 .find-me-section {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .find-me-title {
   color: var(--text-primary);
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
   font-weight: 500;
   transition: color 0.4s ease;
 }
 
 .social-icons {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .social-icon {
   color: var(--text-primary);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
@@ -126,14 +126,14 @@
 
 .hero-buttons {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .btn {
-  padding: 1rem 2.5rem;
+  padding: 0.8rem 2rem;
   border-radius: 40px;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
@@ -146,7 +146,7 @@
   background-color: var(--accent-bg);
   color: var(--text-primary);
   border: 2px solid var(--accent-border);
-  box-shadow: 0 10px 20px var(--accent-shadow);
+  box-shadow: 0 5px 15px var(--accent-shadow);
 }
 
 .btn-primary:hover {
@@ -177,8 +177,8 @@
 
 .hero-image-circle {
   position: absolute;
-  width: 420px;
-  height: 420px;
+  width: 380px;
+  height: 380px;
   border-radius: 50%;
   background-color: var(--shape-blue);
   background: var(--circle-bg);
@@ -194,8 +194,8 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 900px;
-  max-height: 600px;
+  max-width: 800px;
+  max-height: 500px;
   object-fit: cover;
   object-position: top;
   border-radius: 10px;
@@ -207,8 +207,8 @@
 
 /* Pagination on the right side */
 .hero-pagination {
-  position: absolute;
-  right: 3rem;
+  position: fixed;
+  right: 2rem;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
@@ -219,7 +219,7 @@
 
 .page-num {
   color: var(--text-faint);
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: 600;
   cursor: pointer;
   transition: color 0.3s ease;
@@ -236,28 +236,28 @@
 /* Responsive Styles */
 @media (max-width: 1024px) {
   .hero-title {
-    font-size: 4.5rem;
+    font-size: 3rem;
   }
 
   .hero-image-circle {
-    width: 340px;
-    height: 340px;
+    width: 300px;
+    height: 300px;
   }
 }
 
 @media (max-width: 768px) {
   .hero-container {
     flex-direction: column;
-    padding-top: 8rem;
+    padding-top: 6rem;
     text-align: center;
   }
 
   .hero-content {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 
   .hero-title {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
   }
 
   .social-icons,
@@ -274,14 +274,14 @@
   }
 
   .hero-image-circle {
-    width: 260px;
-    height: 260px;
+    width: 240px;
+    height: 240px;
   }
 }
 
 @media (max-width: 480px) {
   .hero-image-circle {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
   }
 }

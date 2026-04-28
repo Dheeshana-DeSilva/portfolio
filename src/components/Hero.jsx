@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-scroll'
 import { FaGithub, FaLinkedin, FaMedium, FaDownload } from 'react-icons/fa'
 import profileImg from '../assets/profile.png'
 import './Hero.css'
@@ -15,10 +16,20 @@ const Hero = () => {
 
       {/* Pagination (right side) */}
       <div className="hero-pagination">
-        <span className="page-num active">01</span>
-        <span className="page-num">02</span>
-        <span className="page-num">03</span>
-        <span className="page-num">04</span>
+        {['about', 'education', 'skills', 'projects', 'articles', 'contact'].map((section, index) => (
+          <Link
+            key={section}
+            to={section}
+            spy={true}
+            smooth={true}
+            duration={500}
+            className="page-num"
+            activeClass="active"
+            offset={0}
+          >
+            0{index + 1}
+          </Link>
+        ))}
       </div>
 
       <div className="hero-container">
