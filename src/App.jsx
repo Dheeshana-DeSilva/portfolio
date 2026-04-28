@@ -27,10 +27,10 @@ function App() {
     <div>
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <Hero />
-      <TechStack />
-      <Articles />
-      <Projects />
       <Education />
+      <TechStack />
+      <Projects />
+      <Articles />
       <Contact />
       <Footer />
     </div>
