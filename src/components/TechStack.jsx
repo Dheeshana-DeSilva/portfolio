@@ -1,3 +1,5 @@
+<<<<<<< Updated upstream
+=======
 import React from 'react';
 
 import './TechStack.css';
@@ -21,8 +23,8 @@ const skillCategories = [
     skills: [
       { name: "Java", iconUrl: devicon('java/java-original.svg') },
       { name: "PHP", iconUrl: devicon('php/php-original.svg') },
-      { name: "Spring Boot Framework", iconUrl: devicon('spring/spring-original.svg') },
-      { name: "Node.js", iconUrl: devicon('nodejs/nodejs-original.svg') },
+      { name: "Spring Boot", iconUrl: devicon('spring/spring-original.svg') },
+      { name: "Node.js", iconUrl: devicon('nodejs/nodejs-original-wordmark.svg') },
       { name: "Express.js", iconUrl: devicon('express/express-original.svg'), className: 'express-icon' }
     ]
   },
@@ -72,3 +74,4 @@ const TechStack = () => {
 };
 
 export default TechStack;
+>>>>>>> Stashed changes

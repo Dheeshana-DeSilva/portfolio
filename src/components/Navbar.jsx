@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-scroll'
+<<<<<<< Updated upstream
+=======
 import { FaSun, FaMoon } from 'react-icons/fa'
-import profileImg from '../assets/profile.png'
+import profileImg from '../assets/profile.webp'
+>>>>>>> Stashed changes
 import './Navbar.css'
 
-const Navbar = ({ theme, toggleTheme }) => {
+const Navbar = () => {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -14,15 +17,35 @@ const Navbar = ({ theme, toggleTheme }) => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const navLinks = ['about', 'skills', 'experience', 'projects', 'education', 'contact']
+
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
 
         {/* Logo */}
         <span className="nav-logo">
-          <img src={profileImg} alt="Profile" className="nav-profile-pic" />
+          Dheeshana De Silva
         </span>
 
+<<<<<<< Updated upstream
+        {/* Desktop Links */}
+        <ul className="nav-links">
+          {navLinks.map((link) => (
+            <li key={link}>
+              <Link
+                to={link}
+                smooth={true}
+                duration={500}
+                offset={-70}
+                className="nav-link"
+              >
+                {link}
+              </Link>
+            </li>
+          ))}
+        </ul>
+=======
         {/* Right Side Group */}
         <div className="nav-menu-group">
           {/* Desktop Links */}
@@ -40,7 +63,7 @@ const Navbar = ({ theme, toggleTheme }) => {
                   to={link.id}
                   smooth={true}
                   duration={500}
-                  offset={0}
+                  offset={-70}
                   className="nav-link"
                 >
                   {link.label}
@@ -48,52 +71,34 @@ const Navbar = ({ theme, toggleTheme }) => {
               </li>
             ))}
           </ul>
+>>>>>>> Stashed changes
 
-          {/* Right side controls (Theme Toggle + Hamburger) */}
-          <div className="nav-right">
-            <button
-              className="theme-toggle"
-              onClick={toggleTheme}
-              aria-label="Toggle theme"
-              title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-            >
-              {theme === 'dark' ? <FaSun /> : <FaMoon />}
-            </button>
-
-            <button
-              className={`hamburger-btn ${menuOpen ? 'open' : ''}`}
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-label="Toggle Menu"
-            >
-              <span className="hamburger-line" />
-              <span className="hamburger-line" />
-              <span className="hamburger-line" />
-            </button>
-          </div>
-        </div>
+        {/* Mobile Hamburger */}
+        <button
+          className={`hamburger-btn ${menuOpen ? 'open' : ''}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle Menu"
+        >
+          <span className="hamburger-line" />
+          <span className="hamburger-line" />
+          <span className="hamburger-line" />
+        </button>
       </div>
 
       {/* Mobile Menu */}
       <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
         <ul className="mobile-nav-links">
-          {[
-            { id: 'about', label: 'About' },
-            { id: 'education', label: 'Education' },
-            { id: 'skills', label: 'Skills' },
-            { id: 'projects', label: 'Projects' },
-            { id: 'articles', label: 'Article' },
-            { id: 'contact', label: 'Contact' }
-          ].map((link) => (
-            <li key={link.id}>
+          {navLinks.map((link) => (
+            <li key={link}>
               <Link
-                to={link.id}
+                to={link}
                 smooth={true}
                 duration={500}
-                offset={0}
+                offset={-70}
                 className="nav-link"
                 onClick={() => setMenuOpen(false)}
               >
-                {link.label}
+                {link}
               </Link>
             </li>
           ))}

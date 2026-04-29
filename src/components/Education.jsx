@@ -1,3 +1,5 @@
+<<<<<<< Updated upstream
+=======
 import React from 'react';
 import './Education.css';
 import uokLogo from '../assets/UOK_Logo.png';
@@ -7,10 +9,10 @@ const educationData = [
   {
     id: 1,
     institution: "University of Kelaniya",
-    degree: "BSc (Hons) in Software Engineering (Reading)",
+    degree: "BSc (Hons) in Software Engineering",
     duration: "2023 - Present",
     details: [
-      <React.Fragment key="gpa">Current GPA: <span className="highlight-text">3.76/4.0</span></React.Fragment>,
+      <React.Fragment key="gpa">Current GPA: <span className="highlight-text">3.77/4.0</span></React.Fragment>,
       "Key Domains: Data Science and Engineering, Net-Centric Web Applications, Business Engineering Applications, Health Informatics Applications"
     ],
     logo: uokLogo
@@ -74,3 +76,4 @@ const Education = () => {
 };
 
 export default Education;
+>>>>>>> Stashed changes

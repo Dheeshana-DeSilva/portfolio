@@ -1,14 +1,14 @@
 /* d:\portfolio\src\components\Hero.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600;800&display=swap');
 
 .hero-section {
   position: relative;
   min-height: 100vh;
-  background-color: var(--bg-primary);
+  background-color: #0b0e17;
   overflow: hidden;
   display: flex;
   align-items: center;
   font-family: 'Inter', sans-serif;
-  transition: background-color 0.4s ease;
 }
 
 /* Background Abstract Shapes */
@@ -16,21 +16,39 @@
   position: absolute;
   border-radius: 50%;
   z-index: 0;
-  transition: background-color 0.4s ease;
 }
 
+<<<<<<< Updated upstream
 .bg-shape.dark-blue-1 {
   width: 700px;
   height: 700px;
-  background-color: var(--shape-blue);
+  background-color: #12182b;
   top: -250px;
   left: -250px;
 }
 
+
+
+=======
+/* Dot Grid Background Elements */
+.dot-grid {
+  position: absolute;
+  width: 100px;
+  height: 200px;
+  z-index: 0;
+  background-image: radial-gradient(var(--text-muted) 2px, transparent 2px);
+  background-size: 15px 15px;
+  opacity: 0.5;
+  top: 25%;
+  left: 0%;
+}
+
+
+>>>>>>> Stashed changes
 .bg-shape.red-1 {
   width: 120px;
   height: 120px;
-  background-color: var(--shape-red-1);
+  background-color: #ff003c91;
   right: -40px;
   top: 20%;
 }
@@ -38,9 +56,15 @@
 .bg-shape.red-2 {
   width: 180px;
   height: 180px;
-  background-color: var(--shape-red-2);
+<<<<<<< Updated upstream
+  background-color: #ff003c62;
   bottom: -80px;
   left: -60px;
+=======
+  background-color: var(--shape-red-2);
+  bottom: 0px;
+  left: -80px;
+>>>>>>> Stashed changes
 }
 
 .hero-container {
@@ -49,7 +73,7 @@
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 4rem 2rem 1rem;
+  padding: 6rem 2rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -62,78 +86,106 @@
 }
 
 .hero-greeting {
-  color: var(--text-secondary);
-  font-size: 1.25rem;
+  color: #a0a5b5;
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
   font-weight: 300;
-  transition: color 0.4s ease;
 }
 
 .hero-title {
+<<<<<<< Updated upstream
+  color: #ffffff;
+  font-size: 6rem;
+  font-weight: 800;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+=======
   color: var(--text-primary);
-  font-size: 4rem;
+  font-size: 4.5rem;
   font-weight: 800;
   line-height: 1.1;
-  margin-bottom: 1rem;
-  letter-spacing: -0.02em;
-  transition: color 0.4s ease;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--text-primary) 30%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.4s ease;
+>>>>>>> Stashed changes
 }
 
 .hero-subtitle {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  margin-bottom: 2rem;
+  color: #a0a5b5;
+  font-size: 1.125rem;
+  margin-bottom: 2.5rem;
   max-width: 450px;
-  line-height: 1.5;
-  transition: color 0.4s ease;
+  line-height: 1.6;
 }
 
 .highlight-red {
-  color: var(--accent);
+  color: #ff003c;
   font-weight: 500;
 }
 
 .find-me-section {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .find-me-title {
-  color: var(--text-primary);
-  font-size: 1rem;
-  margin-bottom: 0.8rem;
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
   font-weight: 500;
-  transition: color 0.4s ease;
 }
 
 .social-icons {
   display: flex;
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 .social-icon {
-  color: var(--text-primary);
-  font-size: 1.25rem;
+  color: #ffffff;
+  font-size: 1.5rem;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
 }
 
 .social-icon:hover {
-  color: var(--accent);
+<<<<<<< Updated upstream
+  color: #ff003c;
   transform: translateY(-3px);
+=======
+  color: #ffffff;
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px var(--accent-shadow);
+>>>>>>> Stashed changes
 }
 
 .hero-buttons {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .btn {
-  padding: 0.8rem 2rem;
+<<<<<<< Updated upstream
+  padding: 1rem 2.5rem;
   border-radius: 40px;
+=======
+  padding: 0.8rem 2rem;
+  border-radius: 25px;
+>>>>>>> Stashed changes
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
@@ -143,27 +195,39 @@
 }
 
 .btn-primary {
-  background-color: var(--accent-bg);
-  color: var(--text-primary);
-  border: 2px solid var(--accent-border);
+<<<<<<< Updated upstream
+  background-color: #ff003ca2;
+  color: #ffffff;
+  border: 2px solid #ff003c;
+  box-shadow: 0 10px 20px rgba(255, 0, 60, 0.2);
+=======
+  background-color: var(--accent);
+  color: #111111;
+  border: 2px solid var(--accent);
   box-shadow: 0 5px 15px var(--accent-shadow);
+>>>>>>> Stashed changes
 }
 
 .btn-primary:hover {
   background-color: transparent;
-  color: var(--accent-hover);
+<<<<<<< Updated upstream
+  color: #ff003c;
+=======
+  color: var(--accent);
+  border-color: var(--accent);
+>>>>>>> Stashed changes
   box-shadow: none;
 }
 
 .btn-secondary {
   background-color: transparent;
-  color: var(--text-primary);
-  border: 1px solid var(--border-btn);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .btn-secondary:hover {
-  border-color: var(--border-btn-hover);
-  background-color: var(--btn-hover-bg);
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .hero-image-wrapper {
@@ -177,38 +241,53 @@
 
 .hero-image-circle {
   position: absolute;
-  width: 380px;
-  height: 380px;
+  width: 420px;
+  height: 420px;
   border-radius: 50%;
-  background-color: var(--shape-blue);
+<<<<<<< Updated upstream
+  background-color: #12182b;
+  background: radial-gradient(circle at 30% 30%, #202542, #0c1025 60%, #0b0e17 100%);
+  box-shadow: 0 0 60px rgba(15, 20, 50, 0.3), 0 0 120px rgba(10, 14, 30, 0.15);
+=======
   background: var(--circle-bg);
-  box-shadow: var(--circle-shadow);
+  box-shadow: var(--circle-shadow), 0 0 100px var(--accent-shadow);
+>>>>>>> Stashed changes
   z-index: 0;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+<<<<<<< Updated upstream
+=======
   transition: background 0.4s ease, box-shadow 0.4s ease;
+  opacity: 0.6;
+>>>>>>> Stashed changes
 }
 
 .hero-image {
   position: relative;
   z-index: 1;
+<<<<<<< Updated upstream
   width: 100%;
+  max-width: 900px;
+  max-height: 600px;
+=======
+  width: 65%;
   max-width: 800px;
   max-height: 500px;
+>>>>>>> Stashed changes
   object-fit: cover;
   object-position: top;
   border-radius: 10px;
   display: block;
 
-  -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 95%);
+  mask-image: linear-gradient(to bottom, black 50%, transparent 95%);
 }
 
 /* Pagination on the right side */
 .hero-pagination {
-  position: fixed;
-  right: 2rem;
+  position: absolute;
+  right: 3rem;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
@@ -218,8 +297,8 @@
 }
 
 .page-num {
-  color: var(--text-faint);
-  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 0.875rem;
   font-weight: 600;
   cursor: pointer;
   transition: color 0.3s ease;
@@ -230,34 +309,34 @@
 
 .page-num.active,
 .page-num:hover {
-  color: var(--text-primary);
+  color: #ffffff;
 }
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
   .hero-title {
-    font-size: 3rem;
+    font-size: 4.5rem;
   }
 
   .hero-image-circle {
-    width: 300px;
-    height: 300px;
+    width: 340px;
+    height: 340px;
   }
 }
 
 @media (max-width: 768px) {
   .hero-container {
     flex-direction: column;
-    padding-top: 6rem;
+    padding-top: 8rem;
     text-align: center;
   }
 
   .hero-content {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
 
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
   }
 
   .social-icons,
@@ -274,14 +353,14 @@
   }
 
   .hero-image-circle {
-    width: 240px;
-    height: 240px;
+    width: 260px;
+    height: 260px;
   }
 }
 
 @media (max-width: 480px) {
   .hero-image-circle {
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
   }
 }

@@ -1,6 +1,6 @@
 /* Projects Section */
 .projects-section {
-  padding: 4rem 2rem 1rem;
+  padding: 3rem 2rem 1rem;
   color: var(--text-color, #ffffff);
   min-height: 100vh;
   display: flex;
@@ -91,17 +91,26 @@
 /* Carousel Card */
 .carousel-card {
   width: 100%;
-  background-color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform, box-shadow;
 }
 
-[data-theme='dark'] .carousel-card {
-  background-color: #1a1a1a;
-  border: 1px solid #333;
+[data-theme='light'] .carousel-card {
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
 .carousel-image-container {
@@ -126,25 +135,25 @@
 .carousel-card-title {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #111111;
+  color: #ffffff;
   margin-bottom: 0.75rem;
   text-align: left;
 }
 
-[data-theme='dark'] .carousel-card-title {
-  color: #ffffff;
+[data-theme='light'] .carousel-card-title {
+  color: #111111;
 }
 
 .carousel-card-description {
   font-size: 0.85rem;
-  color: #6c757d;
+  color: #a0a0a0;
   line-height: 1.5;
   margin-bottom: 1rem;
   text-align: left;
 }
 
-[data-theme='dark'] .carousel-card-description {
-  color: #a0a0a0;
+[data-theme='light'] .carousel-card-description {
+  color: #6c757d;
 }
 
 .carousel-card-tags {
@@ -155,17 +164,21 @@
 }
 
 .carousel-tag {
-  background-color: #f0f4f8;
-  color: #4a5568;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #e2e8f0;
   padding: 0.4rem 0.8rem;
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-[data-theme='dark'] .carousel-tag {
-  background-color: #2d3748;
-  color: #e2e8f0;
+[data-theme='light'] .carousel-tag {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.06);
+  color: #4a5568;
 }
 
 .carousel-card-footer {
@@ -231,7 +244,7 @@
 /* Responsive */
 @media (max-width: 768px) {
   .projects-section {
-    padding: 4rem 1.5rem;
+    padding: 3rem 1.5rem 2rem;
   }
   
   .carousel-wrapper {
