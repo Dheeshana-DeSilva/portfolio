@@ -1,28 +1,10 @@
 import React from 'react';
 import './Contact.css';
 import { FaEnvelope, FaGithub, FaLinkedinIn, FaPaperPlane } from 'react-icons/fa';
+import { useForm, ValidationError } from '@formspree/react';
 
 const Contact = () => {
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const formData = new FormData(form);
-
-    const response = await fetch("https://formspree.io/f/xbdqnqwp", {
-      method: "POST",
-      body: formData,
-      headers: {
-        'Accept': 'application/json'
-      }
-    });
-
-    if (response.ok) {
-      alert("Thanks for your message! I'll get back to you soon.");
-      form.reset();
-    } else {
-      alert("Oops! There was a problem submitting your form.");
-    }
-  };
+  const [state, handleSubmit] = useForm('xbdqnqwp');
 
   return (
     <section id="contact" className="contact-section">
@@ -71,23 +53,37 @@ const Contact = () => {
         <div className="contact-right">
           <div className="contact-form-container">
             <h3 className="form-title">Send a Message</h3>
-            <form className="contact-form" onSubmit={handleSubmit}>
-              <div className="form-group">
-                <label>NAME</label>
-                <input type="text" name="name" placeholder="Your name" required />
+            {state.succeeded ? (
+              <div className="form-success-message">
+                <p>Thanks for your message! I'll get back to you soon.</p>
               </div>
-              <div className="form-group">
-                <label>EMAIL</label>
-                <input type="email" name="email" placeholder="your.email@example.com" required />
-              </div>
-              <div className="form-group">
-                <label>MESSAGE</label>
-                <textarea name="message" placeholder="Your message..." required></textarea>
-              </div>
-              <button type="submit" className="submit-btn">
-                SEND MESSAGE <FaPaperPlane className="submit-icon" />
-              </button>
-            </form>
+            ) : (
+              <form className="contact-form" onSubmit={handleSubmit}>
+                <div className="form-group">
+                  <label>NAME</label>
+                  <input type="text" name="name" placeholder="Your name" required />
+                  <ValidationError prefix="Name" field="name" errors={state.errors} className="field-error" />
+                </div>
+                <div className="form-group">
+                  <label>EMAIL</label>
+                  <input type="email" name="email" placeholder="your.email@example.com" required />
+                  <ValidationError prefix="Email" field="email" errors={state.errors} className="field-error" />
+                </div>
+                <div className="form-group">
+                  <label>MESSAGE</label>
+                  <textarea name="message" placeholder="Your message..." required></textarea>
+                  <ValidationError prefix="Message" field="message" errors={state.errors} className="field-error" />
+                </div>
+                {state.errors && state.errors.getFormErrors && state.errors.getFormErrors().length > 0 && (
+                  <div className="form-error-message">
+                    <p>⚠️ Something went wrong. Please try again.</p>
+                  </div>
+                )}
+                <button type="submit" className="submit-btn" disabled={state.submitting}>
+                  {state.submitting ? 'SENDING...' : 'SEND MESSAGE'} <FaPaperPlane className="submit-icon" />
+                </button>
+              </form>
+            )}
           </div>
         </div>
 

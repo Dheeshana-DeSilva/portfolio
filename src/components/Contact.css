@@ -250,6 +250,46 @@
   font-size: 0.9rem;
 }
 
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.field-error {
+  font-size: 0.75rem;
+  color: #ff4d4d;
+  margin-top: 0.25rem;
+}
+
+.form-error-message {
+  background-color: rgba(255, 77, 77, 0.1);
+  border: 1px solid rgba(255, 77, 77, 0.3);
+  border-radius: 4px;
+  padding: 0.8rem 1rem;
+  text-align: center;
+}
+
+.form-error-message p {
+  font-size: 0.85rem;
+  color: #ff4d4d;
+  margin: 0;
+}
+
+.form-success-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  text-align: center;
+}
+
+.form-success-message p {
+  font-size: 1.1rem;
+  color: #fbfeff;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
 /* Responsive */
 @media (max-width: 960px) {
   .contact-container {
@@ -262,7 +302,7 @@
   .contact-section {
     padding: 4rem 1.5rem;
   }
-  
+
   .contact-form-container {
     padding: 2rem 1.5rem;
   }
