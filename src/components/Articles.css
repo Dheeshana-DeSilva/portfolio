@@ -1,0 +1,211 @@
+/* Articles Section */
+.articles-section {
+  padding: 5rem 2rem 1rem;
+  color: var(--text-color, #ffffff);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.articles-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Header & Stats */
+.articles-header {
+  margin-bottom: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.articles-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-primary, #ffffff);
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+}
+
+.articles-title span {
+  color: var(--accent, #00d2ff);
+}
+
+[data-theme='light'] .articles-title {
+  color: #111111;
+}
+
+.articles-intro {
+  margin-bottom: 2rem;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.articles-subtitle {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-secondary, #b3b3b3);
+  margin-bottom: 0.2rem;
+}
+
+.medium-profile-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #ffffff;
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.medium-profile-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+[data-theme='light'] .medium-profile-btn {
+  background: rgba(255, 255, 255, 0.5);
+  color: #333333;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='light'] .medium-profile-btn:hover {
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  color: #111111;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+.articles-stats {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  flex: 1;
+  min-width: 250px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme='light'] .stat-card {
+  background: rgba(255, 255, 255, 0.4);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .stat-card:hover {
+  border-color: rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+[data-theme='light'] .stat-card .stat-number {
+  color: #111111;
+}
+
+.stat-icon-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #888888;
+  font-size: 0.95rem;
+}
+
+.stat-icon {
+  font-size: 1.1rem;
+}
+
+.stat-number {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* 3-Card Grid Layout */
+.articles-grid {
+  max-width: 100% !important; /* Override the 600px max-width from Projects.css */
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Smaller Fonts for 3-Card Layout */
+.articles-section .carousel-card-title {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.articles-section .carousel-card-description {
+  font-size: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.articles-section .carousel-tag {
+  font-size: 0.65rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.articles-section .carousel-card-body {
+  padding: 1rem;
+}
+
+.articles-section .carousel-image-container {
+  height: 140px;
+}
+
+.articles-section .carousel-repo-link {
+  font-size: 0.8rem;
+}
+
+.articles-section .repo-icon {
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .articles-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .articles-grid {
+    grid-template-columns: 1fr;
+  }
+}

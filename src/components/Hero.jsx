@@ -1,16 +1,17 @@
 import { motion } from 'framer-motion'
 import { FaGithub, FaLinkedin, FaMedium, FaDownload } from 'react-icons/fa'
-import profileImg from '../assets/profile.png'
+import profileImg from '../assets/profile.webp'
+import { Typewriter } from 'react-simple-typewriter'
 import './Hero.css'
 
 const Hero = () => {
   return (
     <section id="about" className="hero-section">
       {/* Background Abstract Elements */}
-      <div className="bg-shape dark-blue-1"></div>
-      <div className="bg-shape dark-blue-2"></div>
       <div className="bg-shape red-1"></div>
       <div className="bg-shape red-2"></div>
+      <div className="dot-grid dot-grid-top"></div>
+      <div className="dot-grid dot-grid-side"></div>
 
 
       {/* Pagination (right side) */}
@@ -42,7 +43,21 @@ const Hero = () => {
 
           {/* Description */}
           <p className="hero-subtitle">
+<<<<<<< Updated upstream
             A <span className="highlight-red">software engineering </span> Undergraduate
+=======
+            A <span className="highlight-red">
+              <Typewriter
+                words={['Full Stack Developer', 'Software Engineering Undergratuate']}
+                loop={0}
+                cursor
+                cursorStyle='_'
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1500}
+              />
+            </span>
+>>>>>>> Stashed changes
           </p>
 
           {/* Social Links */}
@@ -66,7 +81,7 @@ const Hero = () => {
             <a href="#contact" className="btn btn-primary">
               Hire Me
             </a>
-            <a href="/CV.pdf" download className="btn btn-secondary">
+            <a href="https://drive.google.com/drive/folders/1EB9j0zfb2t_55j_XNgRXnWmw3WF09dNq?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto" target="_blank" rel="noreferrer" className="btn btn-secondary">
               <FaDownload style={{ marginRight: '0.5rem', fontSize: '0.9rem' }} />
               CV
             </a>

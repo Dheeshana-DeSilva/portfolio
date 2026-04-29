@@ -1,25 +1,54 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap');
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+/* ───────── Theme Variables ───────── */
+:root {
+  /* Dark theme (default) */
+  --bg-primary: #0b0e17;
+  --bg-secondary: #12182b;
+  --bg-elevated: rgba(10, 10, 10, 0.85);
+  --bg-mobile-menu: rgba(10, 10, 10, 0.95);
+
+  --text-primary: #ffffff;
+  --text-secondary: #a0a5b5;
+  --text-muted: #9ca3af;
+  --text-faint: rgba(255, 255, 255, 0.2);
+
+  --accent: #e0e0e0;
+  --accent-bg: rgba(224, 224, 224, 0.2);
+  --accent-border: rgba(224, 224, 224, 0.4);
+  --accent-hover: rgba(224, 224, 224, 0.3);
+  --accent-shadow: rgba(224, 224, 224, 0.2);
+
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-btn: rgba(255, 255, 255, 0.4);
+  --border-btn-hover: #ffffff;
+  --btn-hover-bg: rgba(255, 255, 255, 0.05);
+
+  --shape-red-1: rgba(224, 224, 224, 0.15);
+  --shape-red-2: rgba(224, 224, 224, 0.1);
+  --shape-blue: #12182b;
+
+  --circle-bg: radial-gradient(circle at 30% 30%, #202542, #0c1025 60%, #0b0e17 100%);
+  --circle-shadow: 0 0 60px rgba(15, 20, 50, 0.3), 0 0 120px rgba(10, 14, 30, 0.15);
+
+  --nav-underline: #ffffff;
+  --nav-hover-glow: rgba(255, 255, 255, 0.5);
+  --nav-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  --mobile-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+  --logo-gradient: linear-gradient(to right, #fff, #a3a3a3);
+  --hamburger-color: #ffffff;
+
+  --section-bg: #0a0a0a;
+
+  --sans: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
+  color-scheme: dark;
+  color: var(--text-primary);
+  background: var(--bg-primary);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -30,28 +59,56 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
+/* ───────── Light Theme ───────── */
+[data-theme="light"] {
+  --bg-primary: #f5f5f7;
+  --bg-secondary: #e8eaf0;
+  --bg-elevated: rgba(245, 245, 247, 0.9);
+  --bg-mobile-menu: rgba(245, 245, 247, 0.97);
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+  --text-primary: #1a1a2e;
+  --text-secondary: #555770;
+  --text-muted: #6b7280;
+  --text-faint: rgba(0, 0, 0, 0.15);
+
+  --accent: #888888;
+  --accent-bg: rgba(136, 136, 136, 0.15);
+  --accent-border: rgba(136, 136, 136, 0.4);
+  --accent-hover: rgba(136, 136, 136, 0.25);
+  --accent-shadow: rgba(136, 136, 136, 0.15);
+
+  --border-subtle: rgba(0, 0, 0, 0.06);
+  --border-btn: rgba(0, 0, 0, 0.25);
+  --border-btn-hover: #1a1a2e;
+  --btn-hover-bg: rgba(0, 0, 0, 0.04);
+
+  --shape-red-1: rgba(136, 136, 136, 0.15);
+  --shape-red-2: rgba(136, 136, 136, 0.1);
+  --shape-blue: #dde0ec;
+
+  --circle-bg: radial-gradient(circle at 30% 30%, #d5d8e8, #e8eaf0 60%, #f5f5f7 100%);
+  --circle-shadow: 0 0 60px rgba(100, 110, 160, 0.12), 0 0 120px rgba(100, 110, 160, 0.06);
+
+  --nav-underline: #1a1a2e;
+  --nav-hover-glow: rgba(0, 0, 0, 0.15);
+  --nav-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+  --mobile-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+  --logo-gradient: linear-gradient(to right, #1a1a2e, #4a4a6a);
+  --hamburger-color: #1a1a2e;
+
+  --section-bg: #f5f5f7;
+
+  color-scheme: light;
 }
 
+/* ───────── Global Resets ───────── */
 body {
   margin: 0;
+  background-color: var(--bg-primary);
+  background-image: radial-gradient(circle at top right, var(--bg-secondary) 0%, transparent 80%);
+  background-attachment: fixed;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 #root {
@@ -61,12 +118,11 @@ body {
   flex-direction: column;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   margin: 0;
   padding: 0;
 }
+
 p {
   margin: 0;
 }
@@ -76,12 +132,74 @@ code,
   font-family: var(--mono);
   display: inline-flex;
   border-radius: 4px;
-  color: var(--text-h);
+  color: var(--text-primary);
 }
 
 code {
   font-size: 15px;
   line-height: 135%;
   padding: 4px 8px;
-  background: var(--code-bg);
+  background: var(--bg-secondary);
+}
+
+/* ───────── Theme Toggle Button ───────── */
+.theme-toggle {
+  background: none;
+  border: 2px solid var(--border-btn);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-primary);
+  font-size: 1.15rem;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* --------- Global Decorative Elements --------- */
+.bg-shape {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+  transition: background-color 0.4s ease;
+  pointer-events: none;
+}
+
+.dot-grid {
+  position: absolute;
+  width: 150px;
+  height: 200px;
+  z-index: 0;
+  background-image: radial-gradient(var(--text-muted) 2px, transparent 2px);
+  background-size: 15px 15px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.deco-circle {
+  position: absolute;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  opacity: 0.2;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.deco-line {
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  background-color: var(--accent);
+  opacity: 0.2;
+  transform: rotate(-45deg);
+  z-index: 0;
+  pointer-events: none;
 }

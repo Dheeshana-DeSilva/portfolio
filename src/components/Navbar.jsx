@@ -1,5 +1,10 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-scroll'
+<<<<<<< Updated upstream
+=======
+import { FaSun, FaMoon } from 'react-icons/fa'
+import profileImg from '../assets/profile.webp'
+>>>>>>> Stashed changes
 import './Navbar.css'
 
 const Navbar = () => {
@@ -23,6 +28,7 @@ const Navbar = () => {
           Dheeshana De Silva
         </span>
 
+<<<<<<< Updated upstream
         {/* Desktop Links */}
         <ul className="nav-links">
           {navLinks.map((link) => (
@@ -39,6 +45,33 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
+=======
+        {/* Right Side Group */}
+        <div className="nav-menu-group">
+          {/* Desktop Links */}
+          <ul className="nav-links">
+            {[
+              { id: 'about', label: 'About' },
+              { id: 'education', label: 'Education' },
+              { id: 'skills', label: 'Skills' },
+              { id: 'projects', label: 'Projects' },
+              { id: 'articles', label: 'Article' },
+              { id: 'contact', label: 'Contact' }
+            ].map((link) => (
+              <li key={link.id}>
+                <Link
+                  to={link.id}
+                  smooth={true}
+                  duration={500}
+                  offset={-70}
+                  className="nav-link"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+>>>>>>> Stashed changes
 
         {/* Mobile Hamburger */}
         <button
