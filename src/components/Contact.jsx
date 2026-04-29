@@ -3,17 +3,25 @@ import './Contact.css';
 import { FaEnvelope, FaGithub, FaLinkedinIn, FaPaperPlane } from 'react-icons/fa';
 
 const Contact = () => {
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const message = formData.get('message');
+    const form = e.target;
+    const formData = new FormData(form);
 
-    const subject = encodeURIComponent(`Portfolio Message from ${name}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+    const response = await fetch("https://formspree.io/f/xbdqnqwp", {
+      method: "POST",
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
 
-    window.location.href = `mailto:dheeshanadesilva2002@gmail.com?subject=${subject}&body=${body}`;
+    if (response.ok) {
+      alert("Thanks for your message! I'll get back to you soon.");
+      form.reset();
+    } else {
+      alert("Oops! There was a problem submitting your form.");
+    }
   };
 
   return (
