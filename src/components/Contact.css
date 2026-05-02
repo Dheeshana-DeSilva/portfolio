@@ -26,12 +26,13 @@
   font-size: 2.5rem;
   font-weight: 800;
   text-transform: uppercase;
+  color: var(--text-secondary);
   margin-bottom: 1rem;
   letter-spacing: 1px;
 }
 
 .contact-title span {
-  color: var(--accent, #00d2ff);
+  color: var(--text-primary);
 }
 
 [data-theme='light'] .contact-title {

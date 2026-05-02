@@ -24,13 +24,13 @@
 .projects-title {
   font-size: 2.5rem;
   font-weight: 800;
-  color: var(--text-primary, #ffffff);
+  color: var(--text-secondary);
   margin-bottom: 1rem;
   letter-spacing: -0.5px;
 }
 
 .projects-title span {
-  color: var(--accent, #00d2ff);
+  color: var(--text-primary);
 }
 
 [data-theme='light'] .projects-title {
