@@ -17,6 +17,14 @@
   border-bottom: 1px solid var(--border-subtle);
 }
 
+[data-theme='dark'] .navbar.scrolled {
+  background-color: rgba(11, 14, 23, 0.8);
+}
+
+[data-theme='light'] .navbar.scrolled {
+  background-color: rgba(245, 245, 247, 0.8);
+}
+
 .nav-container {
   width: 100%;
   max-width: 100%;
