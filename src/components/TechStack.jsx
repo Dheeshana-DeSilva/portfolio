@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 import React from 'react';
 
 import './TechStack.css';
@@ -74,4 +72,3 @@ const TechStack = () => {
 };
 
 export default TechStack;
->>>>>>> Stashed changes

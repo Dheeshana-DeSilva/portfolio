@@ -1,11 +1,9 @@
 /* Projects Section */
 .projects-section {
-  padding: 3rem 2rem 1rem;
-  color: var(--text-color, #ffffff);
-  min-height: 100vh;
+  padding: 5rem 2rem 4rem;
+  background: transparent;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .projects-container {
@@ -91,26 +89,20 @@
 /* Carousel Card */
 .carousel-card {
   width: 100%;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  backface-visibility: hidden;
-  will-change: transform, box-shadow;
 }
 
-[data-theme='light'] .carousel-card {
-  background: rgba(255, 255, 255, 0.4);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+[data-theme='dark'] .carousel-card {
+  background: var(--glass-bg);
+  border-color: var(--glass-border);
 }
 
 .carousel-image-container {
@@ -130,30 +122,31 @@
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 
 .carousel-card-title {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #111111;
   margin-bottom: 0.75rem;
   text-align: left;
 }
 
-[data-theme='light'] .carousel-card-title {
-  color: #111111;
+[data-theme='dark'] .carousel-card-title {
+  color: #ffffff;
 }
 
 .carousel-card-description {
   font-size: 0.85rem;
-  color: #a0a0a0;
+  color: #6c757d;
   line-height: 1.5;
   margin-bottom: 1rem;
   text-align: left;
 }
 
-[data-theme='light'] .carousel-card-description {
-  color: #6c757d;
+[data-theme='dark'] .carousel-card-description {
+  color: #a0a0a0;
 }
 
 .carousel-card-tags {
@@ -164,26 +157,23 @@
 }
 
 .carousel-tag {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: #e2e8f0;
+  background-color: #f0f4f8;
+  color: #4a5568;
   padding: 0.4rem 0.8rem;
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 500;
-  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-[data-theme='light'] .carousel-tag {
-  background: rgba(0, 0, 0, 0.05);
-  border-color: rgba(0, 0, 0, 0.06);
-  color: #4a5568;
+[data-theme='dark'] .carousel-tag {
+  background-color: #2d3748;
+  color: #e2e8f0;
 }
 
 .carousel-card-footer {
   display: flex;
   justify-content: flex-start;
+  margin-top: auto;
 }
 
 .carousel-repo-link {
@@ -244,7 +234,11 @@
 /* Responsive */
 @media (max-width: 768px) {
   .projects-section {
-    padding: 3rem 1.5rem 2rem;
+    padding: 4rem 1.5rem;
+  }
+  
+  .projects-title {
+    font-size: 2rem;
   }
   
   .carousel-wrapper {

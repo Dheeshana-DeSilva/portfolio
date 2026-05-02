@@ -172,11 +172,11 @@
   max-width: 80vw;
   height: 100vh;
   background-color: var(--bg-mobile-menu);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   padding: 6rem 2rem 2rem;
-  border-left: 1px solid var(--border-subtle);
-  box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+  border-left: 1px solid var(--glass-border);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
   transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   z-index: 40;
   display: flex;

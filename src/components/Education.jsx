@@ -1,5 +1,4 @@
-<<<<<<< Updated upstream
-=======
+
 import React from 'react';
 import './Education.css';
 import uokLogo from '../assets/UOK_Logo.png';
@@ -76,4 +75,3 @@ const Education = () => {
 };
 
 export default Education;
->>>>>>> Stashed changes

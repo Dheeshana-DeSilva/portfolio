@@ -5,27 +5,34 @@
   /* Dark theme (default) */
   --bg-primary: #0b0e17;
   --bg-secondary: #12182b;
-  --bg-elevated: rgba(10, 10, 10, 0.85);
-  --bg-mobile-menu: rgba(10, 10, 10, 0.95);
+  --bg-elevated: rgba(255, 255, 255, 0.03);
+  --bg-gradient: linear-gradient(135deg, #0b0e17 0%, #1a1a2e 100%);
+  
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-blur: blur(12px);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --bg-mobile-menu: rgba(11, 14, 23, 0.85);
 
   --text-primary: #ffffff;
   --text-secondary: #a0a5b5;
   --text-muted: #9ca3af;
   --text-faint: rgba(255, 255, 255, 0.2);
 
-  --accent: #e0e0e0;
-  --accent-bg: rgba(224, 224, 224, 0.2);
-  --accent-border: rgba(224, 224, 224, 0.4);
-  --accent-hover: rgba(224, 224, 224, 0.3);
-  --accent-shadow: rgba(224, 224, 224, 0.2);
+  --accent: #717171;
+  --accent-bg: #717171;
+  --accent-border: #909090;
+  --accent-hover: #444444;
+  --accent-shadow: rgba(113, 113, 113, 0.25);
+  --btn-text: var(--bg-primary);
 
   --border-subtle: rgba(255, 255, 255, 0.05);
   --border-btn: rgba(255, 255, 255, 0.4);
   --border-btn-hover: #ffffff;
   --btn-hover-bg: rgba(255, 255, 255, 0.05);
 
-  --shape-red-1: rgba(224, 224, 224, 0.15);
-  --shape-red-2: rgba(224, 224, 224, 0.1);
+  --shape-grey-1: #cccccc91;
+  --shape-grey-2: #cccccc62;
   --shape-blue: #12182b;
 
   --circle-bg: radial-gradient(circle at 30% 30%, #202542, #0c1025 60%, #0b0e17 100%);
@@ -63,8 +70,13 @@
 [data-theme="light"] {
   --bg-primary: #f5f5f7;
   --bg-secondary: #e8eaf0;
-  --bg-elevated: rgba(245, 245, 247, 0.9);
-  --bg-mobile-menu: rgba(245, 245, 247, 0.97);
+  --bg-elevated: rgba(255, 255, 255, 0.6);
+  --bg-gradient: linear-gradient(135deg, #f5f5f7 0%, #dde0ec 100%);
+
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --glass-blur: blur(12px);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
 
   --text-primary: #1a1a2e;
   --text-secondary: #555770;
@@ -72,18 +84,19 @@
   --text-faint: rgba(0, 0, 0, 0.15);
 
   --accent: #888888;
-  --accent-bg: rgba(136, 136, 136, 0.15);
-  --accent-border: rgba(136, 136, 136, 0.4);
-  --accent-hover: rgba(136, 136, 136, 0.25);
-  --accent-shadow: rgba(136, 136, 136, 0.15);
+  --accent-bg: #717171;
+  --accent-border: #909090;
+  --accent-hover: #555555;
+  --accent-shadow: rgba(0, 0, 0, 0.1);
+  --btn-text: var(--bg-primary);
 
   --border-subtle: rgba(0, 0, 0, 0.06);
   --border-btn: rgba(0, 0, 0, 0.25);
   --border-btn-hover: #1a1a2e;
   --btn-hover-bg: rgba(0, 0, 0, 0.04);
 
-  --shape-red-1: rgba(136, 136, 136, 0.15);
-  --shape-red-2: rgba(136, 136, 136, 0.1);
+  --shape-grey-1: #88888820;
+  --shape-grey-2: #88888815;
   --shape-blue: #dde0ec;
 
   --circle-bg: radial-gradient(circle at 30% 30%, #d5d8e8, #e8eaf0 60%, #f5f5f7 100%);
@@ -98,6 +111,7 @@
   --hamburger-color: #1a1a2e;
 
   --section-bg: #f5f5f7;
+  --bg-mobile-menu: rgba(245, 245, 247, 0.85);
 
   color-scheme: light;
 }
@@ -105,10 +119,11 @@
 /* ───────── Global Resets ───────── */
 body {
   margin: 0;
-  background-color: var(--bg-primary);
-  background-image: radial-gradient(circle at top right, var(--bg-secondary) 0%, transparent 80%);
+  background: var(--bg-gradient);
   background-attachment: fixed;
-  transition: background-color 0.4s ease, color 0.4s ease;
+  color: var(--text-primary);
+  min-height: 100vh;
+  transition: color 0.4s ease;
 }
 
 #root {
@@ -118,7 +133,9 @@ body {
   flex-direction: column;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0;
   padding: 0;
 }
@@ -162,44 +179,6 @@ code {
 .theme-toggle:hover {
   border-color: var(--accent);
   color: var(--accent);
-}
-
-/* --------- Global Decorative Elements --------- */
-.bg-shape {
-  position: absolute;
-  border-radius: 50%;
-  z-index: 0;
-  transition: background-color 0.4s ease;
-  pointer-events: none;
-}
-
-.dot-grid {
-  position: absolute;
-  width: 150px;
-  height: 200px;
-  z-index: 0;
-  background-image: radial-gradient(var(--text-muted) 2px, transparent 2px);
-  background-size: 15px 15px;
-  opacity: 0.5;
-  pointer-events: none;
-}
-
-.deco-circle {
-  position: absolute;
-  border: 2px solid var(--accent);
-  border-radius: 50%;
-  opacity: 0.2;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.deco-line {
-  position: absolute;
-  width: 100px;
-  height: 2px;
-  background-color: var(--accent);
-  opacity: 0.2;
-  transform: rotate(-45deg);
-  z-index: 0;
-  pointer-events: none;
+  transform: rotate(30deg);
+  box-shadow: 0 0 16px var(--accent-shadow);
 }
