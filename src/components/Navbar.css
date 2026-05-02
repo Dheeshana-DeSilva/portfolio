@@ -1,6 +1,8 @@
 .navbar {
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   z-index: 50;
   transition: all 0.3s ease-in-out;
@@ -16,12 +18,14 @@
 }
 
 .nav-container {
-  max-width: 1152px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
   padding: 1rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 2rem;
 }
 
 .nav-logo {
@@ -43,6 +47,27 @@
 .nav-logo:hover .nav-profile-pic {
   transform: scale(1.05);
   border-color: var(--nav-underline);
+}
+
+.nav-name {
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.nav-logo:hover .nav-name {
+  color: var(--nav-underline);
+  text-shadow: 0 0 10px var(--nav-hover-glow);
+}
+
+@media (max-width: 480px) {
+  .nav-name {
+    display: none;
+  }
 }
 
 
@@ -109,21 +134,22 @@
   align-items: center;
   justify-content: center;
   background: none;
-  border: 1px solid var(--border-subtle);
+  border: 2px solid var(--border-btn);
   border-radius: 50%;
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 2.4rem;
+  height: 2.4rem;
   cursor: pointer;
-  color: var(--text-muted);
-  font-size: 1rem;
-  transition: color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
 .theme-toggle:hover {
-  color: var(--text-primary);
-  border-color: var(--nav-underline);
-  box-shadow: 0 0 10px var(--nav-hover-glow);
-  transform: rotate(20deg) scale(1.1);
+  color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 15px var(--accent-shadow);
+  transform: rotate(30deg) scale(1.1);
 }
 
 .hamburger-btn {
@@ -135,6 +161,7 @@
   border: none;
   padding: 0.5rem;
   z-index: 60;
+  flex-shrink: 0;
 }
 
 @media (min-width: 768px) {

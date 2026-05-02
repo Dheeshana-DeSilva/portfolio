@@ -21,6 +21,7 @@ const Navbar = ({ theme, toggleTheme }) => {
         {/* Logo */}
         <span className="nav-logo">
           <img src={profileImg} alt="Profile" className="nav-profile-pic" />
+          <span className="nav-name">Dheeshana</span>
         </span>
 
         {/* Right Side Group */}
