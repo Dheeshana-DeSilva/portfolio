@@ -313,3 +313,37 @@
     max-width: 250px;
   }
 }
+
+/* Scroll Down Button */
+.scroll-down-wrapper {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  animation: bounce 2s infinite;
+}
+
+.scroll-down-btn {
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  display: flex;
+}
+
+.scroll-down-btn:hover {
+  color: var(--accent);
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}

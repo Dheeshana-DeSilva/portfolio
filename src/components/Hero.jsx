@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-scroll'
-import { FaGithub, FaLinkedin, FaMedium, FaDownload } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaMedium, FaDownload, FaChevronDown } from 'react-icons/fa'
 import { Typewriter } from 'react-simple-typewriter'
 import profileImg from '../assets/profile.webp'
 import './Hero.css'
@@ -109,6 +109,13 @@ const Hero = () => {
             className="hero-image"
           />
         </motion.div>
+      </div>
+      
+      {/* Scroll Down Indicator */}
+      <div className="scroll-down-wrapper">
+        <Link to="education" smooth={true} duration={500} className="scroll-down-btn" aria-label="Scroll to Education">
+          <FaChevronDown />
+        </Link>
       </div>
     </section>
   )
