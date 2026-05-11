@@ -3,9 +3,26 @@ import './Projects.css';
 import { FaGithub, FaFigma, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import sportsItemsImg from '../assets/sports-items.jpg';
 import bookFairImg from '../assets/book-fair.jpg';
-import UnibeatImg from '../assets/unibeat.png'
+import UnibeatImg from '../assets/unibeat.png';
+import kelaniXchangeImg from '../assets/KelaniXchange.png';
 
 const projectsData = [
+  {
+    id: 4,
+    title: "KelaniXchange – University Marketplace",
+    subtitle: "Individual Project",
+    description: "A MERN stack marketplace for university students to buy, sell, and exchange items, featuring JWT authentication and university email registration.",
+    features: [
+      "Building a MERN stack marketplace for university students to buy, sell, and exchange items.",
+      "Implementing JWT authentication with university email based registration.",
+      "Developing item listings, category browsing, user profiles, and listing management.",
+      "Adding item exchange requests where sellers can accept or reject offers.",
+      "Designing a responsive and user friendly interface for student marketplace needs."
+    ],
+    tags: ["MongoDB", "Express", "React", "Node.js"],
+    image: kelaniXchangeImg,
+    repoLink: "https://github.com/Dheeshana-DeSilva/KelaniXchange"
+  },
   {
     id: 1,
     title: "Book Fair Stall Reservation Platform",
@@ -73,7 +90,7 @@ const Projects = () => {
         <div className="projects-header">
           <h2 className="projects-title">Featured <span>Projects</span></h2>
           <div className="projects-intro">
-            <p className="projects-subtitle">Some of my recent collaborative work and applications.</p>
+            <p className="projects-subtitle">Some of my recent work.</p>
           </div>
         </div>
 
