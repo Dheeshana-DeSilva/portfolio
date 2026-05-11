@@ -11,7 +11,7 @@ const educationData = [
     degree: "BSc (Hons) in Software Engineering",
     duration: "2023 - Present",
     details: [
-      <React.Fragment key="gpa">Current GPA: <span className="highlight-text">3.77/4.0</span></React.Fragment>,
+      <React.Fragment key="gpa">Current GPA: <span className="highlight-text">3.8/4.0</span></React.Fragment>,
       "Key Domains: Data Science and Engineering, Net-Centric Web Applications, Business Engineering Applications, Health Informatics Applications"
     ],
     logo: uokLogo
