@@ -12,7 +12,7 @@ const educationData = [
     duration: "2023 - Present",
     details: [
       <React.Fragment key="gpa">CGPA: <span className="highlight-text">3.8/4.0</span></React.Fragment>,
-      "Key Domains: Data Science and Engineering, Net-Centric Web Applications, Business Engineering Applications, Health Informatics Applications"
+      "Key Domains: Data Science and Engineering, Net-Centric Web Applications, Health Informatics Applications"
     ],
     logo: uokLogo
   },
@@ -46,8 +46,14 @@ const certificationsData = [
   {
     id: 3,
     title: "IEEEXtreme 19.0 Programming Competition",
-    subtitle: "IEEE",
-    link: "https://certificate.ieeextreme.org/generate-email-certificate/8zgqQN3taGoCx..........."
+    subtitle: "IEEEXtreme 2025",
+    link: "https://certificate.ieeextreme.org/generate-email-certificate/8zgqQN3taGoCx"
+  },
+  {
+    id: 4,
+    title: "Operate with DevOps",
+    subtitle: "Microsoft Learn",
+    link: "https://learn.microsoft.com/en-us/users/dheeshanadesilva-4330/achievements/h2wg7hx8"
   }
 ];
 
