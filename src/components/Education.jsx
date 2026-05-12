@@ -9,7 +9,7 @@ const educationData = [
     id: 1,
     institution: "University of Kelaniya",
     degree: "BSc (Hons) in Software Engineering",
-    duration: "2023 - Present",
+    duration: "2024 - Present",
     details: [
       <React.Fragment key="gpa">CGPA: <span className="highlight-text">3.8/4.0</span></React.Fragment>,
       "Key Domains: Data Science and Engineering, Net-Centric Web Applications, Health Informatics Applications"
@@ -20,7 +20,7 @@ const educationData = [
     id: 2,
     institution: "Mahamaya Girls' College, Kandy",
     degree: "G.C.E. Advanced Level - Physical Science",
-    duration: "2013 - 2022",
+    duration: "2013 - 2023",
     details: [
       "GCE A/L 2022: Combined Mathematics: B | Chemistry: B | Physics: B",
       <React.Fragment key="zscore">Z-Score: <span className="highlight-text">1.5463</span></React.Fragment>,
@@ -33,27 +33,51 @@ const educationData = [
 const certificationsData = [
   {
     id: 1,
-    title: "Figma Design Basics and Features",
-    subtitle: "Alison • 2025",
-    link: "https://drive.google.com/file/d/12QdxSCnQ7rV7gWBFIYSYEsY8GMAwVE2Y/view?usp=sharing"
-  },
-  {
-    id: 2,
-    title: "Diploma in C programming",
-    subtitle: "Alison • 2024",
-    link: "https://drive.google.com/file/d/12QdxSCnQ7rV7gWBFIYSYEsY8GMAwVE2Y/view?usp=sharing"
-  },
-  {
-    id: 3,
     title: "IEEEXtreme 19.0 Programming Competition",
-    subtitle: "IEEEXtreme 2025",
+    subtitle: "IEEE Sri Lanka Section",
     link: "https://certificate.ieeextreme.org/generate-email-certificate/8zgqQN3taGoCx"
   },
   {
-    id: 4,
+    id: 2,
     title: "Operate with DevOps",
-    subtitle: "Microsoft Learn",
+    subtitle: "Microsoft",
     link: "https://learn.microsoft.com/en-us/users/dheeshanadesilva-4330/achievements/h2wg7hx8"
+  },
+  {
+    id: 3,
+    title: "Machine Learning for Beginners",
+    subtitle: "Sololearn",
+    link: "https://www.sololearn.com/certificates/CC-VXZ2GA1K"
+  },
+  {
+    id: 4,
+    title: "Diploma in C programming",
+    subtitle: "Alison",
+    link: "https://drive.google.com/file/d/12QdxSCnQ7rV7gWBFIYSYEsY8GMAwVE2Y/view?usp=sharing"
+  },
+  {
+    id: 5,
+    title: "Angular",
+    subtitle: "Sololearn",
+    link: "https://www.sololearn.com/certificates/CC-CLMUQ6V4"
+  },
+  {
+    id: 6,
+    title: "Introduction to Python",
+    subtitle: "Sololearn",
+    link: "https://www.sololearn.com/certificates/CC-IBYFSJ9G"
+  },
+  {
+    id: 7,
+    title: "Figma Design Basics and Features",
+    subtitle: "Alison",
+    link: "https://drive.google.com/file/d/12QdxSCnQ7rV7gWBFIYSYEsY8GMAwVE2Y/view?usp=sharing"
+  },
+  {
+    id: 8,
+    title: "Implement Azure Container Apps",
+    subtitle: "Microsoft",
+    link: "https://learn.microsoft.com/api/achievements/share/en-us/DheeshanaDeSilva-4330/JHS49HVT?sharingId=17C8292D1270C2B3"
   }
 ];
 

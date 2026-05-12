@@ -246,9 +246,9 @@
 }
 
 .certifications-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
 }
 
 .certification-card {
@@ -258,10 +258,12 @@
   -webkit-backdrop-filter: var(--glass-blur);
   border: 1px solid var(--glass-border);
   box-shadow: var(--glass-shadow);
-  border-radius: 10px;
-  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
   transition: transform 0.3s ease, border-color 0.3s ease;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .certification-card:hover {
@@ -279,11 +281,11 @@
 }
 
 .certification-title {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: var(--text-primary);
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.2;
 }
 
 [data-theme='light'] .certification-title {
@@ -291,7 +293,7 @@
 }
 
 .certification-subtitle {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: #a0a5b5;
 }
 
