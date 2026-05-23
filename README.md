@@ -1,4 +1,4 @@
-# 🌐 Dheeshana De Silva — Personal Portfolio
+# Dheeshana De Silva — Personal Portfolio
 
 A modern, responsive personal portfolio website built with React and Vite, showcasing my projects, skills, education, and articles.
 
@@ -128,6 +128,3 @@ This will:
 
 ---
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
