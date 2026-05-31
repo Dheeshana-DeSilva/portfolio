@@ -23,7 +23,7 @@ const Contact = () => {
               </div>
               <div className="contact-card-text">
                 <span className="contact-card-label">EMAIL</span>
-                <a href="mailto:dheeshanadesilva2002@gmail.com" className="contact-card-value" style={{ textDecoration: 'none' }}>dheeshanadesilva2002@gmail.com</a>
+                <a href="mailto:dheeshanandesilva@gmail.com" className="contact-card-value" style={{ textDecoration: 'none' }}>dheeshanandesilva@gmail.com</a>
               </div>
             </div>
 

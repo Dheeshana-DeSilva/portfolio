@@ -122,7 +122,7 @@ This will:
 
 ## 📬 Contact
 
-- **Email:** [dheeshanadesilva2002@gmail.com](mailto:dheeshanadesilva2002@gmail.com)
+- **Email:** [dheeshanandesilva@gmail.com](mailto:dheeshanandesilva@gmail.com)
 - **GitHub:** [Dheeshana-DeSilva](https://github.com/Dheeshana-DeSilva)
 - **LinkedIn:** [dheeshana-de-silva2002](https://www.linkedin.com/in/dheeshana-de-silva2002/)
 
